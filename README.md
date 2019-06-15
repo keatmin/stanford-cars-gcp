@@ -6,10 +6,10 @@ requirements.txt
 CPU build
 Generally, pytorch GPU build should work fine on machines that don’t have a CUDA-capable GPU, and will just use the CPU. However, you can install CPU-only versions of Pytorch if needed with fastai.
 
-pip
+```pip
 
-`pip install http://download.pytorch.org/whl/cpu/torch-1.0.0-cp36-cp36m-linux_x86_64.whl
-pip install fastai`
+pip install http://download.pytorch.org/whl/cpu/torch-1.0.0-cp36-cp36m-linux_x86_64.whl
+pip install fastai```
 Just make sure to pick the correct torch wheel url, according to the needed platform, python and CUDA version, which you will find here.
 
 conda
