@@ -9,7 +9,9 @@ Generally, pytorch GPU build should work fine on machines that donâ€™t have a CU
 ```pip
 
 pip install http://download.pytorch.org/whl/cpu/torch-1.0.0-cp36-cp36m-linux_x86_64.whl
-pip install fastai```
+pip install fastai 
+```
+
 Just make sure to pick the correct torch wheel url, according to the needed platform, python and CUDA version, which you will find here.
 
 conda
@@ -22,7 +24,7 @@ Also, please note, that if you have an old GPU and pytorch fails because it canâ
 
 ## Training 
 1. Initial hypothesis is training first with normal images followed by cropped image will have a higher accuracy, lesson learnt from this training is that during resizing, the image is zoomed in and cropped to the size that was chosen during resizing, losing features that make a car a car. 
-2. 
+2. Due to the low amount of 
 
 
 TODO: 
