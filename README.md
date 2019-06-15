@@ -1,5 +1,25 @@
 # stanford-cars-gcp
-Stanford cars classifiers
+Image classification using fastai v1 run on GCP VM P1. 
+
+This readme is arranged in such order: 
+1. Results summary
+2. Installation guide 
+3. Test guide 
+4. Preprocessing and training details
+
+# Results Summary
+All training is done using 1-cycle policy. 
+Preprocessing methods and EDA is done in *0_preprocessing_and_EDA.ipynb*
+
+Notebook | Details | Accuracy | Precision | Recall | Epochs | Training time
+*** | *** | *** | *** | *** | *** | 
+1_resnet50 | ResNet-50 Benchmark model  | 82.61% | x | x | 35e | 49 minutes
+2_resnet152 | ResNet-152 Benchmark | 87.56% | x | x | 35e |  104 minutes 
+3_resnet152 | ResNet-152 progressive resizing & square-rectangular image training | 92.45% | x | x | 35e | 
+
+
+
+
 
 requirements.txt 
 
@@ -25,12 +45,12 @@ Also, please note, that if you have an old GPU and pytorch fails because it canâ
 ## Training 
 1. Initial hypothesis is training first with normal images followed by cropped image will have a higher accuracy, lesson learnt from this training is that during resizing, the image is zoomed in and cropped to the size that was chosen during resizing, losing features that make a car a car. 
 2. Due to the low amount of 
+3. What is TTA()
 
 
 TODO: 
 Loading images, predicting results and returning probability
 
-Resnext101
 ## Baseline with resnet50
 
 training a network from scratch will not yield very accurate results
