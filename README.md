@@ -7,7 +7,7 @@ This readme is arranged in such order:
 3. Test guide 
 4. Training summary
 
-# Results Summary
+# 1. Results Summary
 All training is done using 1-cycle policy. 
 Preprocessing methods and EDA is done in *0_preprocessing_and_EDA.ipynb*
 
@@ -20,9 +20,7 @@ Notebook | Details | Test Accuracy | Precision | Recall | Epochs | Training time
 5_resnet152_prog_rect_cropped | Progressive resizing with cropped | **94.27%** | x | x | 35e | x 
 6_resnet50_prog_rect_cropped | Progressive resizing with cropped | 
 
-
-
-
+# 2. Installation guide
 requirements.txt 
 
 CPU build
@@ -41,10 +39,10 @@ conda
 The conda way is more involved. Since we have only a single fastai package that relies on the default pytorch package working with and without GPU environment, if you want to install something custom you will have to manually tweak the dependencies. This is explained in detail here. So follow the instructions there, but replace pytorch with pytorch-cpu, and torchvision with torchvision-cpu.
 
 Also, please note, that if you have an old GPU and pytorch fails because it can’t support it, you can still use the normal (GPU) pytorch build, by setting the env var CUDA_VISIBLE_DEVICES="", in which case pytorch will not try to check if you even have a GPU.
+# 3. Testing Guide
 
-
-## Training 
-
+# 4. Training Summary
+## Training
 1. Initial hypothesis is training first with normal images followed by cropped image will have a higher accuracy, lesson learnt from this training is that during resizing, the image is zoomed in and cropped to the size that was chosen during resizing, losing features that make a car a car. 
 2. Due to the low amount of data (8144 in training set and 196 classes, averaging 41 images per class for training and validation refer to EDA in the the first notebook *0_preprocessing_and_EDA.ipynb*), transfer learning was chosen on a pretrained ResNet-50 or a Resnet-152 model because training a network from scratch will not yield a very accurate result. 
 3. `TTA()` is a technique that was used to test to increase the accuracy of the prediction by performing random transformation to test images based on augmentations and transformations done on the training set
