@@ -12,7 +12,7 @@ All training is done using 1-cycle policy.
 Preprocessing methods and EDA is done in *0_preprocessing_and_EDA.ipynb*
 
 Notebook | Details | Accuracy | Precision | Recall | Epochs | Training time
-*** | *** | *** | *** | *** | *** | 
+:---: | :---: | :---: | :---: | :---: | :---: | 
 1_resnet50 | ResNet-50 Benchmark model  | 82.61% | x | x | 35e | 49 minutes
 2_resnet152 | ResNet-152 Benchmark | 87.56% | x | x | 35e |  104 minutes 
 3_resnet152 | ResNet-152 progressive resizing & square-rectangular image training | 92.45% | x | x | 35e | 
