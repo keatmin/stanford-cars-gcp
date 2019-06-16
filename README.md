@@ -33,17 +33,22 @@ Requirements
 
 
 ## 3. Testing Guide
-Model can be downloaded via this link : [Google Drive link of model](https://drive.google.com/uc?export=download&confirm=ZfKU&id=1SiT2sHE6JDokx7m3qdlMTJJ0uAv5F73i). Place the file in the same directory as the test script `get_cars_predictions.py`
+Model can be downloaded via this link : [Google Drive link of model](https://drive.google.com/uc?export=download&confirm=ZfKU&id=1SiT2sHE6JDokx7m3qdlMTJJ0uAv5F73i). <br>
+Place the file in the same directory as the test script `get_cars_predictions.py`
 
 This test will be carried out via CPU based on the model from notebook 5 by default. It will generate a csv file of prediction class, probability and its filename in the current directory.
 ```python get_car_predictions.py 'holdout_testset_path' --csv_fname='csv_name_to_generate' ```
 
 ## 4. Training Summary
 ### Training
-1. Initial hypothesis is training first with normal images followed by cropped image will have a higher accuracy, lesson learnt from this training is that during resizing, the image is zoomed in and cropped to the size that was chosen during resizing, losing features that make a car a car. 
+
+1. Initial hypothesis is training first with normal images followed by cropped image will have a higher accuracy, lesson learnt from this training is that during resizing, the image is zoomed in and cropped to the size that was chosen during resizing, losing features that make a car a car. Hence training it at 299x299 first before resizing to 299x400 images work extremely well. 
+
 2. Due to the low amount of data (8144 in training set and 196 classes, averaging 41 images per class for training and validation refer to EDA in the the first notebook *0_preprocessing_and_EDA.ipynb*), transfer learning was chosen on a pretrained ResNet-50 or a Resnet-152 model because training a network from scratch will not yield a very accurate result. 
+
 3. `TTA()` is a technique that was used to test to increase the accuracy of the prediction by performing random transformation to test images based on augmentations and transformations done on the training set
-4. Due to the low amount of training data for each class, I have decided to double the amount as well as data augmentation by using the cropped images based on bbox to increase the training dataset to 16288 images (1 cropped image for each normal image). Which worked well
+
+4. Due to the low amount of training data for each class, I have decided to double the amount as well as data augmentation by using the cropped images based on bbox to increase the training dataset to 16288 images (1 cropped image for each normal image). Which worked well, the only downside is it takes 447 minutes(more than 7 hours) to train the model. 
 
 ### Data augmentation 
 #### On training with rectangular images
