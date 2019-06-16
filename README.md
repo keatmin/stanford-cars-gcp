@@ -1,5 +1,5 @@
 # stanford-cars-gcp
-Image classification using fastai v1 run on Google Cloud Platform VM NVIDIA Tesla P1. A better results are found with training with rectangular images after training it on square images. Doubling the number of images in the dataset sees an increase in accuracy of the model.  
+Image classification using fastai v1 running on Google Cloud Platform VM NVIDIA Tesla P1. A better results are found with training with rectangular images after training it on square images. Doubling the number of images in the dataset sees an increase in accuracy of the model.  
 
 This **readme** is arranged in such order: 
 1. Results summary
