@@ -68,7 +68,7 @@ Several `model` can be obtained, but pickle file from notebook 5 should perform 
 
 - `TTA()` is a technique that was used to test to increase the accuracy of the prediction by performing random transformation to test images based on augmentations and transformations done on the training set.
 
-- mixup was a 
+- mixup is a heavy regularizer that can be used as a potential avenues in the future to extend the accuracy of the model, due to the amount of epochs it require to have the same amount of increased accuracy, it was a bigger tradeoff than data augmentation method of including a cropped version into the training dataset. 
 
 - Due to the low amount of training data for each class, I have decided to double the amount as well as data augmentation by using the cropped images based on bbox to increase the training dataset to 16288 images (1 cropped image for each normal image). Which worked well, the only downside is it takes 447 minutes(more than 7 hours), the expense of training time more than **doubled** and cropped images of the same car appearing in the validation set in order to maximise the amount of data, making validation score looks inflated and unreliable when training. **A mistake learnt** that is avoidable by using indexes or column in a dataframe to split rather than a random percentage split but due to the time constraint and time it takes to train, I was unable to alter the split (I am a human, afterall).Due to that, this method somehow **defies the traditional practice** of having train-validation-test split by maximising the number of available data (inspired by competitions in Kaggle and Agile development) by only having the available test set as the only reliable benchmark. 
 
