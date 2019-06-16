@@ -17,9 +17,9 @@ Notebook | Details | Test Accuracy | Precision | Recall | Epochs | Training time
 :---: | :---: | :---: | :---: | :---: | :---: | :---:
 1_resnet50 | ResNet-50 Benchmark model  | 82.61% | x | x | 35e | 49 minutes
 2_resnet152 | ResNet-152 Benchmark | 87.56% | x | x | 35e |  104 minutes 
-3_resnet152_prog_sq-rect | Progressive resizing & square to rectangular images| **92.45%** | 92.39% | 92.12% | 35e | 240 minutes
+3_resnet152_prog_sq-rect | Progressive resizing & square to rectangular images| **92.45%**(TTA) | 92.39% | 92.12% | 35e | 240 minutes
 4_resnet152_prog_rect | Progressive resizing of only rectangular images | 91.69% | x | x | 35e | 207 minutes 
-5_resnet152_prog_rect_cropped | Progressive resizing with cropped and normal images (16288 images)  | **94.27%** | 93.83% | 93.57% | 35e | 477 minutes
+5_resnet152_prog_rect_cropped | Progressive resizing with cropped and normal images (16288 images)  | **94.27%**(TTA) | 93.83% | 93.57% | 35e | 477 minutes
 
 ## 2. Installation guide
 
