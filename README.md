@@ -64,6 +64,7 @@ I decided to train normal images and cropped images together due to the fact tha
 
 #### Data Augmentation 
 Perhaps the most important step that is essential in providing a better accuracy. Together with **progressive resizing** and **rectangular images training**, I have also used the default fastai images transformation, performed by calling `get_transforms()` that randomly augments the images according to their parameters: <br>
+
 `do_flip` : perform flipping with probability of 0.5. I chose the default value **True** for this parameter <br>
 `flip_ver` : if True flip images vertically instead, I chose **False** as it doesn't help to have a vertically flipped images<br>
 `max_rotate`: I chose up to **10.0** degree rotation at random, <br>
