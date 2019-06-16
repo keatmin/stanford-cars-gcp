@@ -2,7 +2,7 @@
 Image classification using fastai v1 running on Google Cloud Platform VM NVIDIA Tesla P1. 
 
 - A better result is found with training with rectangular images (4:3 ratio) after training it on square images, cameras in the market **all** take photos in a **4:3** or **16:9** ratio by default unless the user voluntarily chooses a 1:1 ratio(a potential psychopath?). Hence this makes model trained with rectangular images perfect to predict images taken from smartphone cameras as well and even if it's not fastai library automatically converts images to predict into a 4:3 ratio before predicting.  
-- Regularizer such as [mixup](https://arxiv.org/abs/1710.09412) was helpful in increasing the accuracy but it requires more epochs to achieve the same result, doubling the time to achieve the same result by just resizing to rectangular images. A combination of rectangular images and mixup will improve the accuracy of the model more but the opportunity cost is higher than training with the next method
+- Regularizer such as [mixup](https://arxiv.org/abs/1710.09412) was helpful in increasing the accuracy but it requires more epochs to achieve the same result, doubling the time to achieve the same result achieved by just resizing to rectangular images. A combination of rectangular images and mixup will improve the accuracy of the model more but the opportunity cost is higher than training with the next method
 - Doubling the number of images in the dataset with cropped and original images sees an increase in accuracy of the model (94.27% TTA accuracy). Refer to [Training summary](https://github.com/keatmin/stanford-cars-gcp#4-training-summary) for more information regarding this method. 
 
 ## Contents: 
