@@ -2,12 +2,12 @@ from fastai.vision import *
 from fastai import * 
 import fire
 
-model_url = 'https://drive.google.com/uc?export=download&confirm=ZfKU&id=1SiT2sHE6JDokx7m3qdlMTJJ0uAv5F73i'
+model_url = 'https://drive.google.com/uc?export=download&confirm=63dP&id=1ZY9yt5Gtkvoy4HEtEqFVjZzopGLaMOPq'
 export_file_name = '152resnet.pkl'
 path = Path(__file__).parent
 
-def setup_learner(data):
-    learn = load_learner(path, export_file_name, test=data)
+def setup_learner(data ,model):
+    learn = load_learner(path, model, test=data)
     return learn
 
 def setup_images(test_path): 
@@ -21,11 +21,11 @@ def generate_csv(learn, preds,test_path,fname):
     joint_df = pred_df.join(g)[['filename','prediction','probability']]
     return joint_df.to_csv(fname,index=False)
 
-def analyze(test_path,csv_fname='preds.csv'): 
+def analyze(test_path,csv_fname='preds.csv',model=export_file_name): 
     defaults.device = torch.device('cpu')
     prediction_data = setup_images(test_path)
     print('Setting up learner...')
-    learn = setup_learner(prediction_data)
+    learn = setup_learner(prediction_data,model)
     print('Predicting images...')
     preds = learn.get_preds(DatasetType.Test)
     print('Generating csv...')
