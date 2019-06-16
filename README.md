@@ -41,13 +41,17 @@ Place the file in the same directory as the test script `get_cars_predictions.py
 
 This test will be carried out via CPU based on the [model](https://drive.google.com/uc?export=download&confirm=uVfv&id=1ZY9yt5Gtkvoy4HEtEqFVjZzopGLaMOPq) from notebook 5 by default. It will generate a csv file of prediction class, probability and its filename in the current directory.
 
-```python get_cars_prediction.py 'holdout_testset_path'```
+```
+python get_cars_prediction.py 'holdout_testset_path'
+```
 
 `holdout_testset_path` being the folder consisting test images relative to the script. 
 
 or 
 
-```python get_cars_prediction.py 'holdout_testset_path' --csv_fname='csv_name_to_generate.csv' --model='model_name.pkl' ```
+```
+python get_cars_prediction.py 'holdout_testset_path' --csv_fname='csv_name_to_generate.csv' --model='model_name.pkl' 
+```
 
 Several `model` can be obtained, but pickle file from notebook 5 should perform the best. 
 
