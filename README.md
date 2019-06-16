@@ -51,6 +51,9 @@ Training with rectangular images showed to provide a faster convergence compared
 
 A typical transfer learning process involve training the last layer before unfreezing the whole architecture for training, which would be the typical approach of freezing the pretrained model and training it for 5 epochs before unfreezing the model
 
+#### Training with cropped images
+I decided to train normal images and cropped images together due to the fact that there are too little data available for each class to be trained. That way I doubled the number of images of each class, helping the model to recognise the noise from the actual object to classify. Together with data augmentation, the model will be able to obtain more dataset to increase it's accuracy. This method helped to increase the accuracy of my previous best training by **1.7%**
+
 #### Data Augmentation 
 Perhaps the most important step that is essential in providing a better accuracy. Together with **progressive resizing** and **rectangular images training**, I have also used the default fastai images transformation, performed by calling `get_transforms()` that randomly augments the images according to their parameters: <br>
 `do_flip` : perform flipping with probability of 0.5. I chose the default value **True** for this parameter <br>
