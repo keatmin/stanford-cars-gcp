@@ -17,22 +17,26 @@ Notebook | Details | Test Accuracy | Precision | Recall | Epochs | Training time
 :---: | :---: | :---: | :---: | :---: | :---: | :---:
 1_resnet50 | ResNet-50 Benchmark model  | 82.61% | x | x | 35e | 49 minutes
 2_resnet152 | ResNet-152 Benchmark | 87.56% | x | x | 35e |  104 minutes 
-3_resnet152_prog_sq-rect | Progressive resizing & square to rectangular images| **92.45%** | x | x | 35e | 240 minutes
+3_resnet152_prog_sq-rect | Progressive resizing & square to rectangular images| **92.45%** | 92.39% | 92.12% | 35e | 240 minutes
 4_resnet152_prog_rect | Progressive resizing of only rectangular images | 91.69% | x | x | 35e | 207 minutes 
-5_resnet152_prog_rect_cropped | Progressive resizing with cropped and normal images (16288 images)  | **94.27%** | x | x | 35e | 477 minutes
+5_resnet152_prog_rect_cropped | Progressive resizing with cropped and normal images (16288 images)  | **94.27%** | 93.83% | 93.57% | 35e | 477 minutes
 
 ## 2. Installation guide
 
-fastai v1 requires at least pytorch v1.x. The library only works on Linux machines and it's in experimental stage on Windows machines.  
+fastai v1 requires at least pytorch v1.x and Python 3.6 and above. The library only works on Linux machines and it's in experimental stage on Windows machines.  
 
 pip
 ```
 pip install fastai 
 ```
+Requirements
+
 
 ## 3. Testing Guide
-This test will be carried out based on the model 5 by default. If there's a need to test other models, you can specify by calling --model=4. The numbering convention is based on the 
-`python get_car_predictions.py 'holdouttestpath' `
+Model can be downloaded via this link : [Google Drive link of model](https://drive.google.com/uc?export=download&confirm=ZfKU&id=1SiT2sHE6JDokx7m3qdlMTJJ0uAv5F73i). Place the file in the same directory as the test script `get_cars_predictions.py`
+
+This test will be carried out via CPU based on the model from notebook 5 by default. It will generate a csv file in the current directory.
+```python get_car_predictions.py 'holdout_testset_path' --csv_fname='csv_name_to_generate' ```
 
 ## 4. Training Summary
 ### Training
