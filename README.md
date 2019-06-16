@@ -32,15 +32,24 @@ pip install -r requirements.txt
 
 
 ## 3. Testing Guide
-Model can be downloaded via this link : [Google Drive link of model](https://drive.google.com/uc?export=download&confirm=ZfKU&id=1SiT2sHE6JDokx7m3qdlMTJJ0uAv5F73i). <br>
+Model can be downloaded via this link : [Google Drive link of model from notebook 5](https://drive.google.com/uc?export=download&confirm=uVfv&id=1ZY9yt5Gtkvoy4HEtEqFVjZzopGLaMOPq). <br>
 
-Model from notebook 3 
-Model from notebook 4
+[Model from notebook 3](https://drive.google.com/uc?export=download&confirm=Z9RS&id=1Z_p_KaVUnsoBUkAgqHAFSXabfeN8Sgz0)<br>
+[Model from notebook 4](https://drive.google.com/uc?export=download&confirm=Qdde&id=1HOMDiBiteQGX5l3Qi_bH6CysbqlyRX7h)
 
 Place the file in the same directory as the test script `get_cars_predictions.py`
 
-This test will be carried out via CPU based on the model from notebook 5 by default. It will generate a csv file of prediction class, probability and its filename in the current directory.
-```python get_car_predictions.py 'holdout_testset_path' --csv_fname='csv_name_to_generate' ```
+This test will be carried out via CPU based on the [model](https://drive.google.com/uc?export=download&confirm=uVfv&id=1ZY9yt5Gtkvoy4HEtEqFVjZzopGLaMOPq) from notebook 5 by default. It will generate a csv file of prediction class, probability and its filename in the current directory.
+
+```python get_cars_prediction.py 'holdout_testset_path'```
+
+`holdout_testset_path` being the folder consisting test images relative to the script. 
+
+or 
+
+```python get_cars_prediction.py 'holdout_testset_path' --csv_fname='csv_name_to_generate.csv' --model='model_name.pkl' ```
+
+Several `model` can be obtained, but pickle file from notebook 5 should perform the best. 
 
 ## 4. Training Summary
 ### Training
@@ -49,7 +58,7 @@ This test will be carried out via CPU based on the model from notebook 5 by defa
 
 2. Due to the low amount of data (8144 in training set and 196 classes, averaging 41 images per class for training and validation refer to EDA in the the first notebook *0_preprocessing_and_EDA.ipynb*), transfer learning was chosen on a pretrained ResNet-50 or a Resnet-152 model because training a network from scratch will not yield a very accurate result. 
 
-3. `TTA()` is a technique that was used to test to increase the accuracy of the prediction by performing random transformation to test images based on augmentations and transformations done on the training set
+3. `TTA()` is a technique that was used to test to increase the accuracy of the prediction by performing random transformation to test images based on augmentations and transformations done on the training set.
 
 4. Due to the low amount of training data for each class, I have decided to double the amount as well as data augmentation by using the cropped images based on bbox to increase the training dataset to 16288 images (1 cropped image for each normal image). Which worked well, the only downside is it takes 447 minutes(more than 7 hours) to train the model. 
 
