@@ -35,7 +35,7 @@ Requirements
 ## 3. Testing Guide
 Model can be downloaded via this link : [Google Drive link of model](https://drive.google.com/uc?export=download&confirm=ZfKU&id=1SiT2sHE6JDokx7m3qdlMTJJ0uAv5F73i). Place the file in the same directory as the test script `get_cars_predictions.py`
 
-This test will be carried out via CPU based on the model from notebook 5 by default. It will generate a csv file in the current directory.
+This test will be carried out via CPU based on the model from notebook 5 by default. It will generate a csv file of prediction class, probability and its filename in the current directory.
 ```python get_car_predictions.py 'holdout_testset_path' --csv_fname='csv_name_to_generate' ```
 
 ## 4. Training Summary
@@ -62,8 +62,5 @@ Perhaps the most important step that is essential in providing a better accuracy
 `p_affine` : Probability of randomly applying affine, default value **0.75**<br>
 `p_lighting` : probability of applying lighting transform, default value **0.75** <br>
 
-
-TODO: 
-Loading images, predicting results and returning probability
 ## Credits
 Codes to extract the labels from the .mat files: [Devon Yates' code on Kaggle](https://www.kaggle.com/criticalmassacre/inaccurate-labels-in-stanford-cars-data-set)
