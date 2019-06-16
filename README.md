@@ -1,5 +1,5 @@
 # stanford-cars-gcp
-Image classification using fastai v1 running on Google Cloud Platform VM NVIDIA Tesla P1. A better results are found with training with rectangular images after training it on square images and doubling the number of images in the dataset with (cropped and original images) sees an increase in accuracy of the model (94.27% TTA accuracy).  
+Image classification using fastai v1 running on Google Cloud Platform VM NVIDIA Tesla P1. A better result is found with training with rectangular images after training it on square images and doubling the number of images in the dataset with (cropped and original images) sees an increase in accuracy of the model (94.27% TTA accuracy).  
 
 This **readme** is arranged in such order: 
 1. Results summary
@@ -8,10 +8,10 @@ This **readme** is arranged in such order:
 4. Training summary
 
 ## 1. Results Summary
-All training is done using 1-cycle policy. 
+All training is done using [Leslie Smith's 1-cycle policy](https://arxiv.org/pdf/1803.09820).
 Preprocessing methods and EDA is done in *0_preprocessing_and_EDA.ipynb*
 
-Training time is calculated based on the time it takes for on the GCP VM NVIDIA Tesla P1 
+Training time is calculated based on the time it takes for the GCP VM NVIDIA Tesla P1 to train the whole model.
 
 Notebook | Details | Test Accuracy | Precision | Recall | Epochs | Training time
 :---: | :---: | :---: | :---: | :---: | :---: | :---:
@@ -29,11 +29,14 @@ pip
 ```
 pip install -r requirements.txt
 ```
-Requirements
 
 
 ## 3. Testing Guide
 Model can be downloaded via this link : [Google Drive link of model](https://drive.google.com/uc?export=download&confirm=ZfKU&id=1SiT2sHE6JDokx7m3qdlMTJJ0uAv5F73i). <br>
+
+Model from notebook 3 
+Model from notebook 4
+
 Place the file in the same directory as the test script `get_cars_predictions.py`
 
 This test will be carried out via CPU based on the model from notebook 5 by default. It will generate a csv file of prediction class, probability and its filename in the current directory.
