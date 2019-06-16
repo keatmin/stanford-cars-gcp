@@ -1,5 +1,5 @@
 # stanford-cars-gcp
-Image classification using fastai v1 running on Google Cloud Platform VM NVIDIA Tesla P1. A better results are found with training with rectangular images after training it on square images. Doubling the number of images in the dataset sees an increase in accuracy of the model.  
+Image classification using fastai v1 running on Google Cloud Platform VM NVIDIA Tesla P1. A better results are found with training with rectangular images after training it on square images and doubling the number of images in the dataset with (cropped and original images) sees an increase in accuracy of the model (94.27% TTA accuracy).  
 
 This **readme** is arranged in such order: 
 1. Results summary
@@ -27,7 +27,7 @@ fastai v1 requires at least pytorch v1.x and Python 3.6 and above. The library o
 
 pip
 ```
-pip install fastai 
+pip install -r requirements.txt
 ```
 Requirements
 
