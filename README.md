@@ -59,6 +59,8 @@ python get_cars_prediction.py 'holdout_testset_path' --csv_fname='csv_name_to_ge
 
 Several `models` can be tested, but pickle file from notebook 5 should perform the best. 
 
+Depending on the size of the dataset to be tested, because inference is done on a CPU, it may take up to 30 minutes to predict. 
+
 ## 4. Training Summary
 ### Training 
 
@@ -66,7 +68,7 @@ Several `models` can be tested, but pickle file from notebook 5 should perform t
 
 - Due to the low amount of data (8144 in training set and 196 classes, averaging 41 images per class for training and validation refer to EDA in the the first notebook *0_preprocessing_and_EDA.ipynb*), transfer learning was chosen on a pretrained ResNet-50 or a Resnet-152 model because training a network from scratch will not yield a very accurate result. 
 
-- `TTA()` is a technique that was used to test to increase the accuracy of the prediction by performing random transformation to test images based on augmentations and transformations done on the training set.
+- `TTA()` is a technique that was used to test by performing random transformation to test images based on augmentations and transformations done on the training set. There are 8 transforms, crop in the 4 corners multiplied by the 2 flips (plus the other augment transforms applied on each of those 8)
 
 - mixup is a heavy regularizer that can be used as a potential avenues in the future to extend the accuracy of the model, due to the amount of epochs it require to have the same amount of increased accuracy, it was a bigger tradeoff than data augmentation method of including a cropped version into the training dataset. 
 
